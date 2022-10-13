@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "generates team profile information",
   "main": "index.js",
+  
 
   "dependencies": {
     "inquirer": "^8.2.4",

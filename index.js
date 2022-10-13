@@ -1,16 +1,39 @@
 // Here is where I will need to add my imports
 
+const inquire = require('inquire');
+
+const fs = require('fs');
+
+// employees
+
+const Employee = require('employee');
+
+const Engineer = require('engineer');
+
+const Intern = require('intern');
+
+const Manager = require('manager');
+
+// html
+
+const htmlInfo = require('html-info');
 
 
 
+// Need to make a list for the employees- MAKE IN HTML!!!!!!!
 
-// Need to make a list for the employees
+const employeeArray = []
+console.log (employeeArray);
 
-
-
-
+function writeToFile (htmlInfo) {
+    fs.writeFile ('index.html', htmlInfo, (err) => 
+    err ? console.log("Error writing to file") : console.log("File Created"))
+}
 
 // Need to promt the user to add the employee 
+
+function 
+
 // Need to set the values for employees
 //Need to return this
 
