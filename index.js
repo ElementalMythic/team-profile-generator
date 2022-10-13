@@ -17,6 +17,7 @@ const Manager = require('manager');
 // html
 
 const htmlInfo = require('html-info');
+const { default: inquirer } = require('inquirer');
 
 
 
@@ -32,7 +33,34 @@ function writeToFile (htmlInfo) {
 
 // Need to promt the user to add the employee 
 
-function 
+function employeeJobs (){
+    return inquirer.prompt(
+
+        [
+            {
+                type : 'list',
+                name : 'jobType',
+                message : 'Select Job Type',
+                choices : ['engineer', 'intern', 'manager'],
+            },
+            {
+                type : 'input',
+                name : 'name',
+                message : 'Enter Employee Name',
+            },
+            {
+                type : 'input',
+                name : 'identification',
+                message : 'Enter Employee identification',
+            },
+            {
+                type : 'input', 
+                name : 'emailAddress',
+                message : 'Enter Email Address',
+            }
+        ]
+    )
+}
 
 // Need to set the values for employees
 //Need to return this
