@@ -62,12 +62,47 @@ function employeeJobs (){
     )
 }
 
+function engineerExtras() {
+    return inquirer.prompt(
+        [
+            {
+                type : 'input',
+                name : 'engineerGithub',
+                message : 'Enter Engineer GitHub',
+            }
+        ]
+    )
+}
+
+function internExtras() {
+    return inquirer.prompt(
+        [
+            {
+                type : 'input',
+                name : 'internSchool',
+                message : 'Enter School',
+            }
+        ]
+    )
+}
+
+function managerExtras() {
+    return inquirer.prompt(
+        [
+            {
+                type : 'input',
+                name : 'managerOffice',
+                message : 'Enter Manager Office Number',
+            }
+        ]
+    )
+}
+
 // Need to set the values for employees
-//Need to return this
 
 // Need to make sure that all catagories requires are included for said emplyee
 
-// need to make function 
+
 
 // need to generate the html
 
