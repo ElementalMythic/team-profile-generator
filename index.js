@@ -144,3 +144,6 @@ init()
 // add test files in thier own folder 
 
 // ******************************ADD PACKAGE-LOCK.JSON TO GITIGNORE BEFORE INITIAL COMMIT**********************************
+
+// https://www.geeksforgeeks.org/difference-between-package-json-and-package-lock-json-files/
+
