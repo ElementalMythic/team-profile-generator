@@ -141,6 +141,6 @@ async function init() {
 
 // answer will stop the "repeat" if the user wants"
 
-// init();
+init()
 
 // add test files in thier own folder 
