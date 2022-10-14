@@ -34,7 +34,7 @@ function writeToFile (htmlInfo) {
 
 // Need to promt the user to add the employee 
 
-function employeeJobs (){
+async function employeeJobs (){
     return inquirer.prompt(
 
         [
@@ -63,7 +63,7 @@ function employeeJobs (){
     )
 }
 
-function engineerExtras() {
+async function engineerExtras() {
     return inquirer.prompt(
         [
             {
@@ -75,7 +75,7 @@ function engineerExtras() {
     )
 }
 
-function internExtras() {
+async function internExtras() {
     return inquirer.prompt(
         [
             {
@@ -87,7 +87,7 @@ function internExtras() {
     )
 }
 
-function managerExtras() {
+async function managerExtras() {
     return inquirer.prompt(
         [
             {
