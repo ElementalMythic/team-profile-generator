@@ -99,15 +99,13 @@ function managerExtras() {
     )
 }
 
-// Need to set the values for employees
-
 // Need to make sure that all catagories requires are included for said emplyee
 
-// need to generate the html
+// need to generate the html 
 
-// loop to make sure they can add as many employees as needed
+// loop to make sure they can add as many employees as they need - await allows for that!
 
-// need to have a stop button
+// need to have a stop button - true false 
 
 async function init() {
     
