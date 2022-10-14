@@ -130,13 +130,13 @@ async function init() {
                                             let man = await managerOffice();
                                                 job = {...job,...man};
                                                 employeeArray.push(job);
-                                        }
-    let answer = await repeat()
+        let answer = await repeat()
                                         
-        if (!resourceLimits.confirm){
-            employeeAdd = false 
-            writeToFile(htmlInfo(employeeArray));
-        }
+            if (!resourceLimits.confirm){
+                employeeAdd = false 
+                writeToFile(htmlInfo(employeeArray));
+            }
+    }
 }
 
 // answer will stop the "repeat" if the user wants"
