@@ -147,3 +147,7 @@ init()
 
 // https://www.geeksforgeeks.org/difference-between-package-json-and-package-lock-json-files/
 
+// https://stackoverflow.com/questions/244777/can-comments-be-used-in-json
+
+// ^^^^^^^^^ something to consider to try later
+
