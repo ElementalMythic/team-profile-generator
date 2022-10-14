@@ -28,7 +28,7 @@ function htmlInfo(employeeArray) {
 
 // need to have a body element where user input can be displayed in html
 
-// need to find a way to add these together 
+// need to find a way to add these together ---
 
 // need to have the working project generated correctly - 
 
@@ -64,3 +64,12 @@ function appender() {
 }
 
 module.exports = htmlInfo;
+
+// how to connect these documents?????
+
+// add functions? 
+
+// make single function?
+
+// s
+
