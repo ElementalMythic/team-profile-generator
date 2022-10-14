@@ -20,19 +20,8 @@ function htmlInfo(employeeArray) {
 
                 <body>
                     <div></div>`
-}
 
-
-
-// need sperate header
-
-// need to have a body element where user input can be displayed in html
-
-// need to find a way to add these together ---
-
-// need to have the working project generated correctly - 
-
-function appender() {
+    function appender() {
 
     let dataInputs = ""
         for (let i = 0; i < employeeArray.length; i++) {
@@ -59,8 +48,11 @@ function appender() {
                         dataInputs +=
                             `<p>Office Numer: ${employeeArray[i].managerOffice}</p></div>`;
                     }
+        
         }
     return dataInputs;
+    }
+    return htmlInfo + appender();
 }
 
 module.exports = htmlInfo;
@@ -72,4 +64,3 @@ module.exports = htmlInfo;
 // make single function?
 
 // s
-

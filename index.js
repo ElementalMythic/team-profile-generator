@@ -1,28 +1,30 @@
 // Here is where I will need to add my imports
 
-const inquire = require('inquire');
+const inquirer = require('inquirer');
 
 const fs = require('fs');
 
-// employees
+const htmlInfo = require('./htmlInfo');
 
-const Employee = require('employee');
+const Employee = require('./lib/employee');
 
-const Engineer = require('engineer');
+const Engineer = require('./lib/engineer');
 
-const Intern = require('intern');
+const Intern = require('./lib/intern');
 
-const Manager = require('manager');
+const Manager = require('./lib/manager');
 
-// html
-
-const htmlInfo = require('htmlInfo');
-const { default: inquirer } = require('inquirer');
-const { resourceLimits } = require('worker_threads');
-
-
+// const htmlInfo = require('htmlInfo');
 
 // Need to make a list for the employees- MAKE IN HTML!!!!!!!
+
+//const employeeArray = []
+//console.log (employeeArray);
+
+//function writeToFile (htmlInfo) {
+//    fs.writeFile ('index.html', htmlInfo, (err) => 
+//    err ? console.log("Error writing to file") : console.log("File Created"))
+//}
 
 const employeeArray = []
 console.log (employeeArray);
@@ -34,7 +36,10 @@ function writeToFile (htmlInfo) {
 
 // Need to promt the user to add the employee 
 
-async function employeeJobs (){
+
+
+function jobType (){
+    
     return inquirer.prompt(
 
         [
@@ -63,7 +68,7 @@ async function employeeJobs (){
     )
 }
 
-async function engineerExtras() {
+function engineerExtras() {
     return inquirer.prompt(
         [
             {
@@ -75,7 +80,7 @@ async function engineerExtras() {
     )
 }
 
-async function internExtras() {
+function internExtras() {
     return inquirer.prompt(
         [
             {
@@ -87,7 +92,7 @@ async function internExtras() {
     )
 }
 
-async function managerExtras() {
+function managerExtras() {
     return inquirer.prompt(
         [
             {
@@ -97,6 +102,19 @@ async function managerExtras() {
             }
         ]
     )
+}
+
+async function addProfile() {
+    return inquirer
+        .prompt(
+            [
+                {
+                    type: 'confirm',
+                    message: 'Add Employee',
+                    name: 'confirm',
+                }
+            ]
+        )
 }
 
 // Need to make sure that all catagories requires are included for said emplyee
@@ -115,29 +133,34 @@ async function init() {
             let job = await jobType();
 
                 if (job.jobType === "engineer"){
-                    let eng = await engineerGithub();
-                        job = {...job,...eng};
+                    let eng = await engineerExtras();
+                        job = { ...job,...eng };
                         employeeArray.push(job);
 
                             }else if (job.jobType === "intern"){
-                                let int = await internSchool();
-                                    job = {...job,...int};
+                                let int = await internExtras();
+                                    job = { ...job,...int };
                                     employeeArray.push(job);
 
                                         }else (job.jobType === "manager");
-                                            let man = await managerOffice();
-                                                job = {...job,...man};
+                                            let man = await managerExtras();
+                                                job = { ...job,...man };
                                                 employeeArray.push(job);
-        let answer = await repeat()
-                                        
-            if (!resourceLimits.confirm){
-                employeeAdd = false 
-                writeToFile(htmlInfo(employeeArray));
-            }
+        let result = await addProfile 
+         // logical not operator !!!!!!!!!!!!
+           if    (!result.confirm){
+            addProfile = false
+            writeToFile(htmlInfo(employeeArray))
+           }
     }
 }
-
 // answer will stop the "repeat" if the user wants"
+
+// added !
+
+// ! = true 
+
+
 
 init()
 
