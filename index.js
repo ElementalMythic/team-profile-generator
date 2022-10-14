@@ -16,8 +16,9 @@ const Manager = require('manager');
 
 // html
 
-const htmlInfo = require('html-info');
+const htmlInfo = require('htmlInfo');
 const { default: inquirer } = require('inquirer');
+const { resourceLimits } = require('worker_threads');
 
 
 
@@ -102,13 +103,43 @@ function managerExtras() {
 
 // Need to make sure that all catagories requires are included for said emplyee
 
-
-
 // need to generate the html
 
 // loop to make sure they can add as many employees as needed
 
 // need to have a stop button
+
+async function init() {
+    
+    let employeeAdd = true;
+
+        while (employeeAdd) {
+            let job = await jobType();
+
+                if (job.jobType === "engineer"){
+                    let eng = await engineerGithub();
+                        job = {...job,...eng};
+                        employeeArray.push(job);
+
+                            }else if (job.jobType === "intern"){
+                                let int = await internSchool();
+                                    job = {...job,...int};
+                                    employeeArray.push(job);
+
+                                        }else (job.jobType === "manager");
+                                            let man = await managerOffice();
+                                                job = {...job,...man};
+                                                employeeArray.push(job);
+                                        }
+    let answer = await repeat()
+                                        
+        if (!resourceLimits.confirm){
+            employeeAdd = false 
+            writeToFile(htmlInfo(employeeArray));
+        }
+}
+
+// answer will stop the "repeat" if the user wants"
 
 // init();
 
