@@ -27,6 +27,7 @@ const Manager = require('./lib/manager');
 //}
 
 const employeeArray = []
+console.log(employeeArray);
 
 
 function writeToFile(employeeArray) {

@@ -21,11 +21,12 @@ function htmlInfo(employeeArray) {
                 <body>
                     <div>My Team</div>`
 
-                    let htmlLowerPreset = `</body>
-                    </html>`
+    let htmlBase = 
+    
+    `</body>
+    </html>`
 
     function appender() {
-
     let dataInputs = ""
         for (let i = 0; i < employeeArray.length; i++) {
             dataInputs += // html generation
@@ -36,19 +37,19 @@ function htmlInfo(employeeArray) {
                 <p>Email: ${employeeArray[i].emailAddress}</p>
             `
 
-                if (employeeArray[i].jobType === 'Engineer')
+                if (employeeArray[i].jobType === 'engineer')
                     {
                         dataInputs += 
                             `<p>GitHub: ${employeeArray[i].engineerGithub}</p></div>`;
                     }
-                else if (employeeArray[i].jobType === 'Intern')
+                else if (employeeArray[i].jobType === 'intern')
                     {
                         dataInputs +=
                             `<p>School: ${employeeArray[i].internSchool}</p></div>`;
                     }
                 else
                 { 
-                    (employeeArray[i].jobType === 'Manager')
+                    (employeeArray[i].jobType === 'manager')
                     {
                         dataInputs +=
                             `<p>Office Numer: ${employeeArray[i].managerOffice}</p></div>`;
@@ -58,10 +59,11 @@ function htmlInfo(employeeArray) {
 
         
 
-    return dataInputs;
+    
     }
-    return htmlPreset + appender() + htmlLowerPreset;
+    return dataInputs;
 }
+return htmlPreset + appender() + htmlBase
 }
 
 module.exports = htmlInfo;
