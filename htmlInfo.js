@@ -19,7 +19,7 @@ function htmlInfo(employeeArray) {
                 </head>
 
                 <body>
-                    <div>My Team</div>`
+                    <h1>The Best Team On The Market</h2>`
 
     let htmlBase = 
     

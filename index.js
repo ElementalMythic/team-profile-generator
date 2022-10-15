@@ -32,9 +32,13 @@ console.log(employeeArray);
 
 function writeToFile(employeeArray) {
     fs.writeFile('index.html', employeeArray, (err) =>
-      err ? console.log("error") : console.log('HTML Created!'))
+      err ? console.log("Error Writing To File") : console.log('File Successfully Added - index.html'))
   
   }
+
+  // error located in html info file - needed make sure that it is in the correct order - it could not locate because the data was not being sent to anything. 
+
+  // add more descriptive messages rather than stock ones
 
 // !!!!!!! Error !!!!!!!!! --- resolved needed to be employee array and not html info becuase html needed to be generated!!!!!!!!!!!!!!
 
