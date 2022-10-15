@@ -27,16 +27,20 @@ const Manager = require('./lib/manager');
 //}
 
 const employeeArray = []
-console.log (employeeArray);
 
-function writeToFile (htmlInfo) {
-    fs.writeFile ('index.html', htmlInfo, (err) => 
-    err ? console.log("Error writing to file") : console.log("File Created"))
-}
+
+function writeToFile(employeeArray) {
+    fs.writeFile('index.html', employeeArray, (err) =>
+      err ? console.log("error") : console.log('HTML Created!'))
+  
+  }
+
+// !!!!!!! Error !!!!!!!!! --- resolved needed to be employee array and not html info becuase html needed to be generated!!!!!!!!!!!!!!
 
 // Need to promt the user to add the employee 
 
-
+//(err) => 
+// err ? console.log("Error writing to file") :
 
 function jobType (){
     
@@ -69,7 +73,8 @@ function jobType (){
 }
 
 function engineerExtras() {
-    return inquirer.prompt(
+    return inquirer
+    .prompt(
         [
             {
                 type : 'input',
@@ -81,7 +86,8 @@ function engineerExtras() {
 }
 
 function internExtras() {
-    return inquirer.prompt(
+    return inquirer
+    .prompt(
         [
             {
                 type : 'input',
@@ -93,7 +99,8 @@ function internExtras() {
 }
 
 function managerExtras() {
-    return inquirer.prompt(
+    return inquirer
+    .prompt(
         [
             {
                 type : 'input',
@@ -127,7 +134,7 @@ async function addProfile() {
 
 async function init() {
     
-    let employeeAdd = true;
+    let employeeAdd = true
 
         while (employeeAdd) {
             let job = await jobType();
@@ -142,18 +149,28 @@ async function init() {
                                     job = { ...job,...int };
                                     employeeArray.push(job);
 
-                                        }else (job.jobType === "manager");
+                                        }else{ (job.jobType === "manager")
                                             let man = await managerExtras();
                                                 job = { ...job,...man };
                                                 employeeArray.push(job);
-        let result = await addProfile 
-         // logical not operator !!!!!!!!!!!!
-           if    (!result.confirm){
-            addProfile = false
-            writeToFile(htmlInfo(employeeArray))
-           }
+                                            
+                                    }
+
+
+                                    let result = await addProfile()
+
+                                    if (!result.confirm) {
+                                      employeeAdd = false
+                                      console.log(employeeArray)
+                                      console.log(employeeArray.length)
+                                      writeToFile(htmlInfo(employeeArray))
+                                    }
+
+            
     }
+
 }
+
 // answer will stop the "repeat" if the user wants"
 
 // added !
